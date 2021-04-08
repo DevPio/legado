@@ -1,0 +1,25 @@
+<h1>Lista de Funcionários</h1>
+<label>
+
+	<input type="search" ng-model="textoFiltro">
+</label>
+<ul ng-show="mostra" ng-repeat="(key,value) in list | filter:textoFiltro">
+	<li>{{value.nome}}</li>
+	<button ng-click="remove(value.id)">Remover</button>
+
+</ul>
+
+<div class="message">
+	<p ng-show="messageError">{{messageError}}</p>
+</div>
+
+<div>
+	<input type="text" id="digitaFunc" />
+	<button id='change'>Buscar funcionario</button>
+</div>
+
+<div>
+	{{funcionario.nome}}
+</div>
+<button ng-click="mostra = !mostra">Mostrar lista</button>
+<a href="">Voltar</a>
